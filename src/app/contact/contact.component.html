@@ -1,0 +1,145 @@
+<div class="container mt-5" id="page-contact">
+
+
+    <h3 class="display-4 fw-bold lh-1 mb-3 text-center">Contact me to get started</h3>
+    <div class="col-lg-8 text-center m-auto">
+        <img src="../../assets/Contact-Header.webp" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy">
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="isLoading" class="form-spinner col-md-12 col-lg-8 mx-auto justify-content-center align-items-center" style="z-index: 1050;">
+            <div class="form-spinner-container mx-auto">
+                <div class="spinner-border text-light m-auto" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="isSuccess" class="col-md-12 col-lg-8 m-auto justify-content-center align-items-center" style="z-index: 1050;">
+            <div class="col-4 form-group mb-6 mx-auto">
+                <img src="../../assets/Contact-Success.webp" class="d-block  img-fluid" alt="Bootstrap Themes" loading="lazy">
+            </div>
+            <div class="form-group row mb-6">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div *ngIf="successMessage" class="success" align="center">
+                        {{ successMessage }}
+                        <br /><br />
+                        You should recieve a reply by next business day or earlier.<br /><br />
+                        If you do not recieve a response within that time please check your spam folders or
+                        you can directly email <a href="mailto:messages@murfwood.com">messages&#64;murfwood.com</a><br /><br />
+                    </div>
+                    <div *ngIf="errorMessage" class="error" align="center">
+                        {{ errorMessage }}
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+        
+
+        <div *ngIf="!(isLoading) && !(isSuccess)" class="col-md-12 col-lg-8 contact-card m-auto">
+
+            <div class="col-lg-8 text-center m-auto">
+                <p class="my-5">
+                    A quick note on pricing.<br /><br />
+                    In order to ensure that we are both committed to the project an up front payment of $500 will be required to secure project time.
+                    <br /><br />
+                    Typical websites range from $1000 to $5000.<br /> Store fronts and full web applications are typically quoted with a partial payment and hourly rates.
+                    <br /><br />
+                    We can discuss pricing and I am willing to work with you or entertain arrangements that can
+                    meet both our needs. Part time or full time employment would also be considered.
+                    <br /><br />
+                    For now, lets figure out what will work for you, questions are free.
+                </p>
+            </div>
+
+            <div class="form-group row mb-6 ">
+
+
+                <label for="firstname" class="col-md-3">
+                    First Name
+                </label>
+                <input class="col-md-6" id="firstname" formControlName="firstname" type="text">
+
+
+                <div class="col-md-3">
+
+                    <!-- Error message for the Name field -->
+                    <div *ngIf="firstname?.touched && firstname?.invalid">
+                        <small *ngIf="firstname?.errors?.['required']">First Name is required.</small>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group row mb-6">
+                <label for="lastname" class="col-md-3">Last Name</label>
+                <input class="col-md-6" id="lastname" formControlName="lastname" type="text">
+                <div class="col-md-3">
+
+                    <!-- Error message for the Name field -->
+                    <div *ngIf="lastname?.touched && lastname?.invalid">
+                        <small *ngIf="lastname?.errors?.['required']">Last Name is required.</small>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group row mb-6">
+                <label for="email" class="col-md-3">Email</label>
+                <input class="col-md-6" id="email" formControlName="email" type="email">
+                <div class="col-md-3">
+                    <!-- Error messages for the Email field -->
+                    <div *ngIf="email?.touched && email?.invalid">
+                        <small *ngIf="email?.errors?.['required']">Email is required.</small>
+                        <small *ngIf="email?.errors?.['email']">Please enter a valid email.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mb-6">
+                <label for="subject" class="col-md-3">Subject</label>
+                <select class="col-md-6 py-1" id="subject" formControlName="subject" type="text">
+                    <option value="design">Web Design</option>
+                    <option value="development">Web Development</option>
+                    <option value="graphics">Graphics</option>
+                    <option value="general">General Info</option>
+                </select>
+                <!-- <input class="col-md-6" id="subject" formControlName="subject" type="text"> -->
+                <div class="col-md-3">
+                    <!-- Error message for the Name field -->
+                    <div *ngIf="subject?.touched && subject?.invalid">
+                        <small *ngIf="subject?.errors?.['required']">Subject is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mb-6">
+                <label for="message" class="col-md-3">Message</label>
+                <textarea class="col-md-6" id="message" formControlName="message"></textarea>
+                <div class="col-md-3">
+                    <!-- Error messages for the Message field -->
+                    <div *ngIf="message?.touched && message?.invalid">
+                        <small *ngIf="message?.errors?.['required']">Message is required.</small>
+                        <small *ngIf="message?.errors?.['minlength']">
+                            Message must be at least {{ message?.errors?.['minlength'].requiredLength }} characters long.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row mb-6">
+                <div class="col-md-4"></div>
+                <button class="col-md-4" type="submit" [disabled]="contactForm.invalid">Submit</button>
+                <div class="col-md-4"></div>
+            </div>
+
+
+
+        </div>
+    </form>
+
+
+
+</div>
+
+
+

@@ -1,0 +1,76 @@
+
+<nav class="navbar navbar-nav bg-dark navbar-expand-lg shadow sticky-top opacity-3 m-0 p-0" data-bs-theme="dark">
+    <div class="container-fluid ">
+        <a class="navbar-brand" routerLink="/home">
+            <img src="../../assets/M-logog-hires.png" alt="Murfwood" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav  col-lg-6 justify-content-end">
+                <li class="nav-item font-main">
+                    <a class="nav-link"
+                       [class.active]="activeLink === 'home'"
+                       (click)="setActive('home')"
+                       data-bs-toggle="collapse" data-bs-target=".navbar-collapse" routerLink="/home">HOME</a>
+                </li>
+                <!--
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        WEB SERVICES
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item font-main">
+                            <a class="nav-link" routerLink="/web-design">DESIGN</a>
+                        </li>
+                        <li class="nav-item font-main">
+                            <a class="nav-link" routerLink="/web-design">DEVELOPMENT</a>
+                        </li>
+                        <li class="nav-item font-main">
+                            <a class="nav-link" routerLink="/web-design">GRAPHICS</a>
+                        </li>
+                        <!-- <li><hr class="dropdown-divider"></li>
+                    </ul>
+                </li>
+                -->
+                <li class="nav-item font-main">
+                    <a class="nav-link"
+                       [class.active]="activeLink === 'web-services'"
+                       (click)="setActive('web-services')"
+                       data-bs-toggle="collapse" data-bs-target=".navbar-collapse" routerLink="/web-services">WEB SERVICES</a>
+                </li>
+                <li class="nav-item font-main">
+                    <a class="nav-link"
+                       [class.active]="activeLink === 'portfolio'"
+                       (click)="setActive('portfolio')"
+                       data-bs-toggle="collapse" data-bs-target=".navbar-collapse" routerLink="/portfolio">PORTFOLIO</a>
+                </li>
+                <li class="nav-item font-main">
+                    <a class="nav-link"
+                       [class.active]="activeLink === 'contact'"
+                       (click)="setActive('contact')"
+                       data-bs-toggle="collapse" data-bs-target=".navbar-collapse" routerLink="/contact">CONTACT</a>
+                </li>
+                <li class="nav-item font-main">
+                    <a class="nav-link"
+                       [class.active]="activeLink === 'about'"
+                       (click)="setActive('about')"
+                       data-bs-toggle="collapse" data-bs-target=".navbar-collapse" routerLink="/about">ABOUT</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+                -->
+            </ul>
+            <!--
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            -->
+        </div>
+    </div>
+</nav>
+

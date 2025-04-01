@@ -1,0 +1,52 @@
+#page-portfolio .card {
+  border-top: 10px solid #ff6a00;
+  border-bottom: 10px solid #000;
+}
+
+.card-title {
+  font-family: "ff-prater-sans-web" !important, sans-serif;
+  border-bottom: 5px #ff6a00;
+  margin: 0;
+  padding: 0;
+  color: #ff6a00;
+}
+
+
+#page-portfolio .card-img-top {
+  width: auto;
+  height: 40px;
+}
+
+.card-img-top-multi {
+    width: 50%;
+    float: right;
+}
+.card-img-top-multi img {
+  max-width: 50%;
+}
+
+
+@media (min-width:768px) {
+  #page-portfolio .card-img-top {
+    width: auto;
+    max-height: 60px;
+  }
+  .card-img-top-multi {
+    width: 40%;
+    float: right;
+  }
+    .card-img-top-multi img {
+      max-width: 50%;
+    }
+}
+@media (min-width:990px) {
+
+  .card-img-top-multi {
+    width: 50%;
+    float: right;
+  }
+
+    .card-img-top-multi img {
+      max-width: 25%;
+    }
+}

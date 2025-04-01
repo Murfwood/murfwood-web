@@ -1,0 +1,1 @@
+C:\Users\davo\source\repos\Murfwood_AngularNetcore2\murfwood_angularnetcore2.client\obj\Debug\murfwood_angularnetcore2.client.esproj.CoreCompileInputs.cache
